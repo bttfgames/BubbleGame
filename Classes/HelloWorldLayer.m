@@ -9,6 +9,7 @@
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
+#import "SimpleAudioEngine.h"
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -44,13 +45,16 @@
 		self.isTouchEnabled = YES;
 		
 		horde = [[NSMutableArray alloc] init];
-		
+		//carrega som
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"hit.wav"];
+        
+        
 		//score
 		int margin = 10;
 		score = 0;
 		label = [CCLabelTTF labelWithString:@"0" fontName:@"Verdana" fontSize:30.0f];
 		label.anchorPoint = ccp(1, 0);
-		label.position = ccp(margin + 130, margin + 7);
+		label.position = ccp(margin + 160, margin + 7);
 		label.color = ccc3(0, 0, 0);
 		
 		//timer
@@ -87,6 +91,29 @@
 }
 
 
+-(void) createExplosion: (float) x y: (float) y{
+    CCParticleSystemQuad *myEmitter;
+    
+    NSLog(@"entrou explosao");
+    myEmitter = [[CCParticleSystemQuad alloc] initWithTotalParticles:20];
+    myEmitter.emitterMode = kCCParticleModeGravity;
+
+    myEmitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"explosion.png"];
+    myEmitter.position = ccp(x,y);
+    
+    myEmitter.life =1.0;
+    myEmitter.duration = 1.0;
+    myEmitter.scale = 0.5;
+    myEmitter.speed = 100;
+    myEmitter.gravity = ccp(x,y);
+    [self addChild: myEmitter];
+    //For not showing color
+    //myEmitter.blendAdditive = NO;
+    myEmitter.autoRemoveOnFinish = YES;
+
+}
+
+
 - (void) updateBackground:(ccTime) deltaT{
     float vel = 4.0f;
     window_size = [[CCDirector sharedDirector] winSize];
@@ -114,6 +141,11 @@
 	for (CCSprite *obj in horde){
 		CGRect orect = CGRectMake(obj.position.x, obj.position.y, obj.contentSize.width, obj.contentSize.height);
 		if (CGRectIntersectsRect(player_rect, orect)){
+            //[self createExplosion:obj.position.x y:obj.position.y];
+            //toca som
+            [[SimpleAudioEngine sharedEngine] playEffect:@"hit.wav"]; //play a sound
+            [[SimpleAudioEngine sharedEngine] stopEffect:0];
+            
 			//score
 			score+= 10;
 			[label setString:[NSString stringWithFormat:@"%d", score]];
@@ -224,6 +256,9 @@
 	// cocos2d will automatically release all the children (Label)
 	[horde release];
 	horde = nil;
+    
+    [[SimpleAudioEngine sharedEngine] dealloc];
+    
 	// don't forget to call "super dealloc"
 	[super dealloc];
 	
