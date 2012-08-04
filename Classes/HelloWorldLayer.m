@@ -74,11 +74,6 @@
         [self addChild:background];
         [self addChild:back1];
         [self addChild:back2];
-        
-        
-        
-        
-		
 		[self addChild:label];
 		[self addChild:timerLabel];
 		
@@ -94,21 +89,18 @@
 -(void) createExplosion: (float) x y: (float) y{
     CCParticleSystemQuad *myEmitter;
     
-    NSLog(@"entrou explosao");
-    myEmitter = [[CCParticleSystemQuad alloc] initWithTotalParticles:20];
-    myEmitter.emitterMode = kCCParticleModeGravity;
+
+    myEmitter = [[CCParticleExplosion alloc] initWithTotalParticles:20];
 
     myEmitter.texture = [[CCTextureCache sharedTextureCache] addImage:@"explosion.png"];
     myEmitter.position = ccp(x,y);
     
-    myEmitter.life =1.0;
+    myEmitter.life =0.5;
     myEmitter.duration = 1.0;
     myEmitter.scale = 0.5;
-    myEmitter.speed = 100;
+    myEmitter.speed = 200;
     myEmitter.gravity = ccp(x,y);
-    [self addChild: myEmitter];
-    //For not showing color
-    //myEmitter.blendAdditive = NO;
+    [self addChild: myEmitter z:10];
     myEmitter.autoRemoveOnFinish = YES;
 
 }
@@ -141,7 +133,7 @@
 	for (CCSprite *obj in horde){
 		CGRect orect = CGRectMake(obj.position.x, obj.position.y, obj.contentSize.width, obj.contentSize.height);
 		if (CGRectIntersectsRect(player_rect, orect)){
-            //[self createExplosion:obj.position.x y:obj.position.y];
+            [self createExplosion:obj.position.x y:obj.position.y];
             //toca som
             [[SimpleAudioEngine sharedEngine] playEffect:@"hit.wav"]; //play a sound
             [[SimpleAudioEngine sharedEngine] stopEffect:0];

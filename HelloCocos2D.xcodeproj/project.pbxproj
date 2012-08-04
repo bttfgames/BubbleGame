@@ -54,7 +54,7 @@
 		57594A8215CD554700363AFE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 57594A8015CD554700363AFE /* back.png */; };
 		57594A8515CD5EE300363AFE /* bubbles.png in Resources */ = {isa = PBXBuildFile; fileRef = 57594A8415CD5EE300363AFE /* bubbles.png */; };
 		57594A8915CD698000363AFE /* explosion.png in Resources */ = {isa = PBXBuildFile; fileRef = 57594A8815CD698000363AFE /* explosion.png */; };
-		57594A8B15CD6CA300363AFE /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57594A8A15CD6CA300363AFE /* hit.wav */; };
+		57594A8D15CD72A700363AFE /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57594A8C15CD72A700363AFE /* hit.wav */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -304,7 +304,7 @@
 		57594A8015CD554700363AFE /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../../../../Desktop/back.png; sourceTree = "<group>"; };
 		57594A8415CD5EE300363AFE /* bubbles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbles.png; path = ../../../../Desktop/bubbles.png; sourceTree = "<group>"; };
 		57594A8815CD698000363AFE /* explosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = explosion.png; path = ../../../../Desktop/explosion.png; sourceTree = "<group>"; };
-		57594A8A15CD6CA300363AFE /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hit.wav; sourceTree = "<group>"; };
+		57594A8C15CD72A700363AFE /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hit.wav; path = ../../../../Desktop/hit.wav; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -661,7 +661,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				57594A8A15CD6CA300363AFE /* hit.wav */,
+				57594A8C15CD72A700363AFE /* hit.wav */,
 				57594A8815CD698000363AFE /* explosion.png */,
 				57594A8415CD5EE300363AFE /* bubbles.png */,
 				57594A8015CD554700363AFE /* back.png */,
@@ -1123,7 +1123,7 @@
 				57594A8215CD554700363AFE /* back.png in Resources */,
 				57594A8515CD5EE300363AFE /* bubbles.png in Resources */,
 				57594A8915CD698000363AFE /* explosion.png in Resources */,
-				57594A8B15CD6CA300363AFE /* hit.wav in Resources */,
+				57594A8D15CD72A700363AFE /* hit.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
