@@ -48,25 +48,59 @@
 		//score
 		int margin = 10;
 		score = 0;
-		label = [CCLabelTTF labelWithString:@"Score: 0" fontName:@"Verdana" fontSize:14.0f];
+		label = [CCLabelTTF labelWithString:@"0" fontName:@"Verdana" fontSize:30.0f];
 		label.anchorPoint = ccp(1, 0);
-		label.position = ccp(window_size.width - margin, margin);
+		label.position = ccp(margin + 130, margin + 7);
 		label.color = ccc3(0, 0, 0);
 		
 		//timer
 		timer = 60.0f;
-		timerLabel = [CCLabelTTF labelWithString:@"Tempo Restante: 60.0" fontName:@"Verdana" fontSize:20.0f];
-		timerLabel.position = ccp(window_size.width/2, window_size.height - margin);
+		timerLabel = [CCLabelTTF labelWithString:@"60.0" fontName:@"Verdana" fontSize:25.0f];
+		timerLabel.position = ccp(window_size.width/2 + 40, window_size.height - 27);
 		timerLabel.color = ccc3(0, 0, 0);
 		
+        //sprites
+        background = [CCSprite spriteWithFile:@"back.png"];
+        back1 = [CCSprite spriteWithFile:@"bubbles.png"];
+        back2 = [CCSprite spriteWithFile:@"bubbles.png"];
+        background.position = ccp(window_size.width/2,window_size.height/2);
+        back1.position = ccp(window_size.width/2,window_size.height/2);
+        back2.position = ccp(window_size.width+ back1.position.x,window_size.height/2);
+        
+        [self addChild:background];
+        [self addChild:back1];
+        [self addChild:back2];
+        
+        
+        
+        
 		
 		[self addChild:label];
 		[self addChild:timerLabel];
 		
+        
+        [self schedule:@selector(updateBackground:) interval:1/60.0f];
 		[self schedule:@selector(update:) interval:1.0];
 
 	}
 	return self;
+}
+
+
+- (void) updateBackground:(ccTime) deltaT{
+    float vel = 4.0f;
+    window_size = [[CCDirector sharedDirector] winSize];
+    back1.position = ccp(back1.position.x - vel, back1.position.y);
+    back2.position = ccp(back2.position.x - vel , back2.position.y);
+    
+    if (back1.position.x < -window_size.width/2){
+        back1.position = ccp(back1.position.x + window_size.width * 2,window_size.height/2);
+    }
+    
+    if (back2.position.x < -window_size.width/2){
+        back2.position = ccp(back2.position.x + window_size.width * 2,window_size.height/2);
+    }
+    
 }
 
 
@@ -82,7 +116,7 @@
 		if (CGRectIntersectsRect(player_rect, orect)){
 			//score
 			score+= 10;
-			[label setString:[NSString stringWithFormat:@"Score: %d", score]];
+			[label setString:[NSString stringWithFormat:@"%d", score]];
 			[deleted addObject: obj];
 		}
 	}
@@ -165,7 +199,7 @@
 	if (timer <= 0) {
 		timer = 0;
 	}
-	[timerLabel setString:[NSString stringWithFormat:@"Tempo restante: %5.1f",timer]];
+	[timerLabel setString:[NSString stringWithFormat:@"%5.1f",timer]];
 }
 
 

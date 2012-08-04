@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		130A5F65158CC47300F6B0D7 /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 130A5F64158CC47300F6B0D7 /* bubble.png */; };
-		13953BB3157A5091004CEFC8 /* bug.png in Resources */ = {isa = PBXBuildFile; fileRef = 13953BB2157A5091004CEFC8 /* bug.png */; };
 		13953BCA157A55B5004CEFC8 /* head.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 13953BC9157A55B5004CEFC8 /* head.jpg */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F3B9A2D0EF2145700286867 /* HelloCocos2DAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* HelloCocos2DAppDelegate.m */; };
@@ -52,6 +51,8 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
+		57594A8215CD554700363AFE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 57594A8015CD554700363AFE /* back.png */; };
+		57594A8515CD5EE300363AFE /* bubbles.png in Resources */ = {isa = PBXBuildFile; fileRef = 57594A8415CD5EE300363AFE /* bubbles.png */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -255,7 +256,6 @@
 
 /* Begin PBXFileReference section */
 		130A5F64158CC47300F6B0D7 /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
-		13953BB2157A5091004CEFC8 /* bug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bug.png; sourceTree = "<group>"; };
 		13953BC9157A55B5004CEFC8 /* head.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = head.jpg; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* HelloCocos2D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloCocos2D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3B9A2B0EF2145700286867 /* HelloCocos2DAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelloCocos2DAppDelegate.m; path = Classes/HelloCocos2DAppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -299,6 +299,8 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57594A8015CD554700363AFE /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../../../../Desktop/back.png; sourceTree = "<group>"; };
+		57594A8415CD5EE300363AFE /* bubbles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbles.png; path = ../../../../Desktop/bubbles.png; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -655,9 +657,10 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				57594A8415CD5EE300363AFE /* bubbles.png */,
+				57594A8015CD554700363AFE /* back.png */,
 				130A5F64158CC47300F6B0D7 /* bubble.png */,
 				13953BC9157A55B5004CEFC8 /* head.jpg */,
-				13953BB2157A5091004CEFC8 /* bug.png */,
 				E02BB762126CC1E0006E46A2 /* iTunesArtwork */,
 				E02BB4FE126CA50F006E46A2 /* Icon@2x.png */,
 				E02BB4FF126CA50F006E46A2 /* Icon-Small@2x.png */,
@@ -1109,9 +1112,10 @@
 				E02BB507126CA50F006E46A2 /* Icon-Small-50.png in Resources */,
 				E02BB508126CA50F006E46A2 /* Icon-72.png in Resources */,
 				E02BB763126CC1E0006E46A2 /* iTunesArtwork in Resources */,
-				13953BB3157A5091004CEFC8 /* bug.png in Resources */,
 				13953BCA157A55B5004CEFC8 /* head.jpg in Resources */,
 				130A5F65158CC47300F6B0D7 /* bubble.png in Resources */,
+				57594A8215CD554700363AFE /* back.png in Resources */,
+				57594A8515CD5EE300363AFE /* bubbles.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

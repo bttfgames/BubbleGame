@@ -20,6 +20,13 @@
 	int score;
 	float timer;
 	BOOL gameOver;
+    
+    //sprites
+    CCSprite *background;
+    CCSprite *back1;
+    CCSprite *back2;
+    
+    
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
